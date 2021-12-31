@@ -1,0 +1,9 @@
+.btn {
+  background-color: hsl(4, 99%, 66%);
+  color: hsl(240, 100%, 98%);
+  font-size: 1.2em;
+  font-weight: 900;
+  padding: 1em;
+  margin-bottom: 1.5em;
+  border-radius: 1em;
+}

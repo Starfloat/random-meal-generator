@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+nav {
+  background-color: hsl(210, 17%, 35%);
+  color: hsl(240, 100%, 98%);
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+h1 {
+  margin-left: 0.5em;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
