@@ -2,12 +2,32 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  padding-bottom: 0.3em;
+}
+
 .split {
   display: flex;
 }
 
+.lCol {
+  flex-grow: 1;
+  flex-basis: 25%;
+  padding: 1em;
+}
+
+.rCol {
+  flex-grow: 1;
+  flex-basis: 50%;
+  padding: 1em;
+}
+
 .item {
   list-style: none;
+}
+
+.bold {
+  font-weight: bold;
 }
 
 .image {
@@ -25,18 +45,18 @@ h1 {
 
 .ingredientsList {
   list-style: none;
-  flex-grow: 1;
-  flex-basis: 25%;
-  padding: 1em;
 }
 
 .instructionsHeader {
   padding: 1em;
 }
-.instructions {
-  flex-grow: 1;
-  flex-basis: 25%;
-  padding: 1em;
+
+.source > a {
+  text-decoration: none;
+}
+
+.tags {
+  padding-top: 2em;
 }
 
 .video {

@@ -13,12 +13,27 @@ nav {
   background-color: hsl(210, 17%, 35%);
   color: hsl(240, 100%, 98%);
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   padding: 1em;
 }
 
 h1 {
   margin-left: 0.5em;
+}
+
+.items {
+  list-style: none;
+  display: flex;
+}
+
+.item {
+  margin: 1em;
+}
+
+.link {
+  text-decoration: none;
+  color: white;
 }
 
 .logo {
