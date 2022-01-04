@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import classes from "./Category.module.css";
-
 const Category = () => {
   const [categoriesList, setCategoriesList] = useState([]);
 
@@ -17,7 +15,7 @@ const Category = () => {
   return (
     <ul>
       {categoriesList.map((category) => (
-        <li className={classes.navItem}>
+        <li>
           <Link to={`/category/${category.strCategory}`}>
             {category.strCategory}
           </Link>
