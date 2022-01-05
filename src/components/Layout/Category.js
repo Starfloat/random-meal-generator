@@ -14,9 +14,9 @@ const Category = () => {
 
   return (
     <ul>
-      {categoriesList.map((category) => (
-        <li>
-          <Link to={`/category/${category.strCategory}`}>
+      {categoriesList.map((category, i) => (
+        <li key={i}>
+          <Link to={"/category/" + category.strCategory}>
             {category.strCategory}
           </Link>
         </li>

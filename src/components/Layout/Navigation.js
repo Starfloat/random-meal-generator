@@ -1,36 +1,30 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
+import { Link } from "react-router-dom";
+import { useDetectOutsideClick } from "../hooks/useDetectOutsideClick";
 
 import Category from "./Category";
-import { Link } from "react-router-dom";
+import Area from "./Area";
+
 import classes from "./Navigation.module.css";
 
 const Navigation = () => {
   const dropdownRef = useRef(null);
-  const [isActive, setIsActive] = useState(false);
+  const [areaIsActive, setAreaIsActive] = useDetectOutsideClick(
+    dropdownRef,
+    false
+  );
+  const [categoryIsActive, setCategoryIsActive] = useDetectOutsideClick(
+    dropdownRef,
+    false
+  );
 
-  const onClick = () => {
-    setIsActive(!isActive);
+  const areaMenuHandler = () => {
+    setAreaIsActive(!areaIsActive);
   };
 
-  useEffect(() => {
-    {
-      const pageClickEvent = (e) => {
-        // If the active element exists and is clicked outside of
-        if (
-          dropdownRef.current !== null &&
-          !dropdownRef.current.contains(e.target)
-        ) {
-          setIsActive(!isActive);
-        }
-      };
-      if (isActive) {
-        window.addEventListener("click", pageClickEvent);
-      }
-      return () => {
-        window.removeEventListener("click", pageClickEvent);
-      };
-    }
-  }, [isActive]);
+  const categoryMenuHandler = () => {
+    setCategoryIsActive(!categoryIsActive);
+  };
 
   return (
     <nav className={classes.navMain}>
@@ -45,20 +39,32 @@ const Navigation = () => {
               Random Meal
             </Link>
           </li>
-          <li className={classes.item}>
-            <Link className={classes.link} to="/area">
-              Area
-            </Link>
-          </li>
 
           <div className={classes.menuContainer}>
-            <button className={classes.menuTrigger} onClick={onClick}>
-              Categories <i className="fa fa-caret-down"></i>
+            <button className={classes.menuTrigger} onClick={areaMenuHandler}>
+              Areas <i className="fa fa-caret-down" />
             </button>
             <nav
               ref={dropdownRef}
               className={`${classes.menu} ${
-                isActive ? classes.active : classes.inactive
+                areaIsActive ? classes.active : classes.inactive
+              }`}
+            >
+              <Area className={classes.dropDownContent} />
+            </nav>
+          </div>
+
+          <div className={classes.menuContainer}>
+            <button
+              className={classes.menuTrigger}
+              onClick={categoryMenuHandler}
+            >
+              Categories <i className="fa fa-caret-down" />
+            </button>
+            <nav
+              ref={dropdownRef}
+              className={`${classes.menu} ${
+                categoryIsActive ? classes.active : classes.inactive
               }`}
             >
               <Category className={classes.dropDownContent} />
