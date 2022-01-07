@@ -29,7 +29,7 @@ const Navigation = () => {
   return (
     <nav className={classes.navMain}>
       <div className={classes.logo}>
-        <i className="fas fa-hamburger fa-3x" />
+        {/* <i className="fas fa-hamburger fa-3x" /> */}
         <h1> Daily Meal</h1>
       </div>
       <div className={classes.navItems}>

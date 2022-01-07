@@ -37,6 +37,7 @@ h2 {
   overflow: hidden;
   flex-grow: 1;
   flex-basis: 25%;
+  padding: 1em;
 }
 
 .ingredients {
