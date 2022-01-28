@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import MealList from "../components/MealGenerator/MealList";
+import Layout from "../components/Layout/Layout";
 
 const RandomMeal = () => {
   const [isLoading, setIsLoading] = useState("false");
@@ -57,8 +58,10 @@ const RandomMeal = () => {
 
   return (
     <>
-      <MealList randomMeal={randomMeal} newMealBtn={generateNewMealHandler} />
-      {/* <button onClick={generateNewMealHandler}> New Random Meal</button> */}
+      <Layout>
+        <MealList randomMeal={randomMeal} newMealBtn={generateNewMealHandler} />
+        {/* <button onClick={generateNewMealHandler}> New Random Meal</button> */}
+      </Layout>
     </>
   );
 };

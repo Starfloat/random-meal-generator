@@ -29,14 +29,14 @@ const Navigation = () => {
   return (
     <nav className={classes.navMain}>
       <div className={classes.logo}>
-        {/* <i className="fas fa-hamburger fa-3x" /> */}
+        <i className="fas fa-hamburger fa-3x" />
         <h1> Daily Meal</h1>
       </div>
       <div className={classes.navItems}>
         <ul className={classes.items}>
           <li className={classes.item}>
             <Link className={classes.link} to="/">
-              Random Meal
+              <button className={classes.menuTrigger}>Random Meal</button>
             </Link>
           </li>
 

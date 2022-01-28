@@ -8,6 +8,7 @@ const MealItemLessList = (props) => {
         return (
           <MealItemLess
             key={meal.idMeal}
+            id={meal.idMeal}
             name={meal.strMeal}
             image={meal.strMealThumb}
           />

@@ -1,0 +1,29 @@
+li {
+  list-style-type: none;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative;
+  text-align: center;
+}
+
+.img {
+  padding: 1em;
+  width: 300px;
+}
+
+.img:hover {
+  opacity: 0.3;
+  max-width: 22rem;
+}
+
+.wrapper {
+  margin-top: 1.5em;
+  padding: 1em;
+  margin-right: auto;
+}
