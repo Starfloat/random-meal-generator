@@ -3,19 +3,26 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Layout/Navigation";
 import RandomMeal from "./pages/RandomMeal";
 import MealsByCategory from "./pages/MealsByCategory";
+import MealFullDetail from "./pages/MealFullDetail";
 import MealByArea from "./pages/MealByArea";
+import Layout from "./components/Layout/Layout";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Navigation />
-        <Routes>
-          <Route path="/" element={<RandomMeal />} />
-          <Route path="/category/:category" element={<MealsByCategory />} />
-          {/* <Route path="/category/:category/" element={<MealsByCategory />} /> */}
-          <Route path="/area/:area" element={<MealByArea />} />
-        </Routes>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<RandomMeal />} />
+            <Route path="/category/:category" element={<MealsByCategory />} />
+            <Route
+              path="/category/:category/:id"
+              element={<MealFullDetail />}
+            />
+            <Route path="/area/:area" element={<MealByArea />} />
+          </Routes>
+        </Layout>
       </BrowserRouter>
     </>
   );

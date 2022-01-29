@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import Layout from "../components/Layout/Layout";
 import MealList from "../components/MealGenerator/MealList";
 
-const RandomMeal = () => {
-  const [isLoading, setIsLoading] = useState("false");
-  const [randomMeal, setRandomMeal] = useState([]);
+const MealFullDetail = () => {
+  const { id } = useParams();
+
+  const [meal, setMeal] = useState([]);
 
   const getMeal = () => {
-    setIsLoading(true);
-    fetch("https://www.themealdb.com/api/json/v1/1/random.php")
+    fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
       .then((response) => {
         return response.json();
       })
@@ -41,13 +43,14 @@ const RandomMeal = () => {
             };
           });
         }
-        setIsLoading(false);
-        setRandomMeal(transformed);
+        setMeal(transformed);
       });
   };
 
+  let navigate = useNavigate();
+
   const generateNewMealHandler = () => {
-    getMeal();
+    navigate("/");
     window.scrollTo(0, 100);
   };
 
@@ -56,11 +59,13 @@ const RandomMeal = () => {
   }, []);
 
   return (
-    <>
-      <MealList randomMeal={randomMeal} newMealBtn={generateNewMealHandler} />
-      {/* <button onClick={generateNewMealHandler}> New Random Meal</button> */}
-    </>
+    <div>
+      <Layout>
+        <MealList randomMeal={meal} newMealBtn={generateNewMealHandler} />
+        {/* <button onClick={generateNewMealHandler}> New Random Meal</button> */}
+      </Layout>
+    </div>
   );
 };
 
-export default RandomMeal;
+export default MealFullDetail;

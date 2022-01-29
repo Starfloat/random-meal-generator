@@ -1,15 +1,14 @@
+a:link {
+  text-decoration: none;
+  color: 4a5968;
+}
+
 li {
   list-style-type: none;
 }
 
 ul {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.card {
-  position: relative;
-  text-align: center;
+  /* display: flex; */
 }
 
 .img {
@@ -22,8 +21,12 @@ ul {
   max-width: 22rem;
 }
 
+.split {
+  display: flex;
+  align-items: center;
+}
+
 .wrapper {
   margin-top: 1.5em;
   padding: 1em;
-  margin-right: auto;
 }
